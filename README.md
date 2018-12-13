@@ -1,41 +1,18 @@
-<p align="center"><img src="https://i.imgur.com/nvYD94K.png" /></p>
+<p align="center"><img src="https://i.imgur.com/xYb2PRb.png" /></p>
 
-> Kubernetes commands
+> Ansible commands
 
 <p align="center">
     <a href="LICENSE.md">
       <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License">
     </a>
-    <a href="https://www.paypal.me/anmolnagpal">
-      <img src="https://img.shields.io/badge/PayPal-Buy%20Me%20A%20BEER-blue.svg?style=flat-squares" alt="Donate">
-    </a>
-  </p>
 </p>
 
-Helper setup to edit .yaml files with Vim:
-
-- [VIM Setup for Yaml files](#vim-setup-for-yaml-files)
-
-List of general purpose commands for Kubernetes management:
+List of general purpose commands for Ansible management:
 
 - [Installation](#installation)
 - [Inventory/Hosts](#inventory)
 - [Check Connection](#check-connection)
-- [POD Upgrade / History](#pod-upgrade-and-history)
-- [Services](#services)
-- [Volumes](#volumes)
-- [Secrets](#secrets)
-- [ConfigMaps](#configmaps)
-- [Ingress](#ingress)
-- [Horizontal Pod Autoscalers](#horizontal-pod-autoscalers)
-- [Scheduler](#scheduler)
-- [Taints and Tolerations](#tains_and_tolerations)
-- [Troubleshooting](#troubleshooting)
-- [Role Based Access Control (RBAC)](#role_based_access_control)
-- [Security Contexts](#security_contexts)
-- [Pod Security Policies](#pod_security_policies)
-- [Network Policies](#network_policies)
-
 
 ## Installation
 
@@ -43,7 +20,7 @@ List of general purpose commands for Kubernetes management:
 $ sudo apt-add-repository ppa:ansible/ansible
 $ sudo apt-get update
 $ sudo apt-get install ansible
-$ ansible -version
+$ ansible --version
 ```
 
 ## Inventory
@@ -138,7 +115,8 @@ ansible mysql -m apt -a "name=python state=absent"
 
 More about Ansible: 
 
-- 
+- https://docs.ansible.com/ansible/latest/index.html
+- https://medium.com/tech-tajawal/ansible-an-effective-it-automation-tool-be603417ea1a
 
 ## 👬 Contribution
 - Open pull request with improvements

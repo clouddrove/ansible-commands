@@ -80,30 +80,32 @@ ansible mysql -a "/sbin/reboot" -f 20
 ```
 > Run ansible using specific user
 ```yamlex
-ansible mysql -a "/usr/bin/foo" -u anmolnagpal
+ansible nginx -a "/usr/bin/foo" -u anmolnagpal
 ```   
 > Run ansible using specific user
 ```yamlex
-ansible mysql -a "/usr/bin/foo" -u anmolnagpal
+ansible nginx -a "/usr/bin/foo" -u anmolnagpal
 ```   
-#### Jump to specific revision
+#### File Transfer
 
+> Transfer file to many servers
+```yamlex
+ansible nginx -m copy -a "src=/etc/anmol.txt dest=/tmp/anmol.txt"
 ```
-$ kubectl rollout undo deployment/DEPLOYMENT_NAME --to-revision=N
+> Transfer file with specific ownership & permission
+```yamlex
+ansible nginx -m file -a "src=/etc/anmol.txt dest=/tmp/anmol.txt mode=600"
+ansible nginx -m file -a "src=/etc/anmol.txt dest=/tmp/anmol.txt mode=600 owner=anmol gorup=anmol"
+```
+> Create Directories 
+
+```yamlex
+ansible nginx -m file -a "dest=/tmp/clouddrove mode=755 owner=anmol gorup=anmol stage=directory"
 ```
 
-## Services
-
-List services
-
-```
-$ kubectl get services
-```
-
-Expose PODs as services (creates endpoints)
-
-```
-$ kubectl expose deployment/monkey --port=2001 --type=NodePort
+> Delete Directories
+```yamlex
+ansible nginx -m file -a "dest=/tmp/clouddrove state=absent"
 ```
 
 ## Volumes

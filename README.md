@@ -20,7 +20,7 @@ List of general purpose commands for Kubernetes management:
 $ sudo apt-add-repository ppa:ansible/ansible
 $ sudo apt-get update
 $ sudo apt-get install ansible
-$ ansible -version
+$ ansible --version
 ```
 
 ## Inventory

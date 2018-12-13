@@ -83,7 +83,7 @@ ansible nginx -m file -a "dest=/tmp/clouddrove mode=755 owner=anmol gorup=anmol 
 ansible nginx -m file -a "dest=/tmp/clouddrove state=absent"
 ```
 
-## Manage Packages
+#### Manage Packages
 
 > Ensure package is installed, but doesn't get updated
 ```yaml
@@ -102,7 +102,7 @@ ansible mysql -m apt -a "name=python state=latest"
 ansible mysql -m apt -a "name=python state=absent"
 ```
 
-## Manage Services
+#### Manage Services
 
 > Ensure a service is started on all nginx servers
 ```yaml

@@ -75,11 +75,9 @@ $  ansible nginx -m file -a "src=/etc/anmol.txt dest=/tmp/anmol.txt mode=600"
 $  ansible nginx -m file -a "src=/etc/anmol.txt dest=/tmp/anmol.txt mode=600 owner=anmol gorup=anmol"
 ```
 > Create Directories 
-
 ```yamlex
 $ ansible nginx -m file -a "dest=/tmp/clouddrove mode=755 owner=anmol gorup=anmol stage=directory"
 ```
-
 > Delete Directories
 ```yamlex
 $ ansible nginx -m file -a "dest=/tmp/clouddrove state=absent"
@@ -91,17 +89,14 @@ $ ansible nginx -m file -a "dest=/tmp/clouddrove state=absent"
 ```
 ansible mysql -m apt -a "name=python state=present"
 ```
-
 > Ensure package is installed to a specific version
 ```
 ansible mysql -m apt -a "name=python-2.6 state=present"
 ```
-
 > Ensure package is installed with latest version
 ```
 ansible mysql -m apt -a "name=python state=latest"
 ```
-
 > Ensure package is installed is not installed
 ```
 ansible mysql -m apt -a "name=python state=absent"
@@ -109,9 +104,18 @@ ansible mysql -m apt -a "name=python state=absent"
 
 ## Manage Services
 
+> Ensure a service is started on all nginx servers
 ```
+ansible nginx -m service -a "name=nginx state=started"
 ```
-
+> Restart service on all nginx servers
+```
+ansible nginx -m service -a "name=nginx state=restarted"
+```
+> Ensure a service is stopped
+```
+ansible nginx -m service -a "name=nginx state=stopped"
+```
 
 More about Ansible: 
 

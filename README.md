@@ -100,7 +100,8 @@ $ ansible nginx -m file -a "dest=/tmp/clouddrove state=absent"
 
 More about Ansible: 
 
-- 
+- https://docs.ansible.com/ansible/latest/index.html
+- https://medium.com/tech-tajawal/ansible-an-effective-it-automation-tool-be603417ea1a
 
 ## 👬 Contribution
 - Open pull request with improvements

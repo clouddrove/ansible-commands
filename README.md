@@ -10,10 +10,6 @@
 
 List of general purpose commands for Ansible management:
 
-- [Installation](#installation)
-- [Inventory/Hosts](#inventory)
-- [Check Connection](#check-connection)
-
 ## Installation
 
 ```bash

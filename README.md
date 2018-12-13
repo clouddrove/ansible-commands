@@ -12,30 +12,11 @@
   </p>
 </p>
 
-Helper setup to edit .yaml files with Vim:
-
-- [VIM Setup for Yaml files](#vim-setup-for-yaml-files)
-
 List of general purpose commands for Kubernetes management:
 
 - [Installation](#installation)
 - [Inventory/Hosts](#inventory)
 - [Check Connection](#check-connection)
-- [POD Upgrade / History](#pod-upgrade-and-history)
-- [Services](#services)
-- [Volumes](#volumes)
-- [Secrets](#secrets)
-- [ConfigMaps](#configmaps)
-- [Ingress](#ingress)
-- [Horizontal Pod Autoscalers](#horizontal-pod-autoscalers)
-- [Scheduler](#scheduler)
-- [Taints and Tolerations](#tains_and_tolerations)
-- [Troubleshooting](#troubleshooting)
-- [Role Based Access Control (RBAC)](#role_based_access_control)
-- [Security Contexts](#security_contexts)
-- [Pod Security Policies](#pod_security_policies)
-- [Network Policies](#network_policies)
-
 
 ## Installation
 

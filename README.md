@@ -16,11 +16,11 @@ List of general purpose commands for Ansible management:
 
 ## Installation
 
-```
-$ sudo apt-add-repository ppa:ansible/ansible
-$ sudo apt-get update
-$ sudo apt-get install ansible
-$ ansible --version
+```bash
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt-get update
+sudo apt-get install ansible
+ansible --version
 ```
 
 ## Inventory
@@ -49,38 +49,38 @@ $ ansible -m ping <host>
 #### Parallelism Shell Commands
 
 ```bash
-$ ssh-agnet bash $ ssh-add ~/.ssh/id_rsa
+ssh-agnet bash $ ssh-add ~/.ssh/id_rsa
 ```
 > Reboot remove server using anisble
 ```yamlex
-$ ansible mysql -a "/sbin/reboot" -f 20
+ansible mysql -a "/sbin/reboot" -f 20
 ```
 > Run ansible using specific user
 ```yamlex
-$ ansible nginx -a "/usr/bin/foo" -u anmolnagpal
+ansible nginx -a "/usr/bin/foo" -u anmolnagpal
 ```   
 > Run ansible using specific user
 ```yamlex
-$ ansible nginx -a "/usr/bin/foo" -u anmolnagpal
+ansible nginx -a "/usr/bin/foo" -u anmolnagpal
 ```   
 #### File Transfer
 
 > Transfer file to many servers
 ```yamlex
-$ ansible nginx -m copy -a "src=/etc/anmol.txt dest=/tmp/anmol.txt"
+ansible nginx -m copy -a "src=/etc/anmol.txt dest=/tmp/anmol.txt"
 ```
 > Transfer file with specific ownership & permission
 ```yamlex
-$  ansible nginx -m file -a "src=/etc/anmol.txt dest=/tmp/anmol.txt mode=600"
-$  ansible nginx -m file -a "src=/etc/anmol.txt dest=/tmp/anmol.txt mode=600 owner=anmol gorup=anmol"
+ansible nginx -m file -a "src=/etc/anmol.txt dest=/tmp/anmol.txt mode=600"
+ansible nginx -m file -a "src=/etc/anmol.txt dest=/tmp/anmol.txt mode=600 owner=anmol gorup=anmol"
 ```
 > Create Directories 
 ```yamlex
-$ ansible nginx -m file -a "dest=/tmp/clouddrove mode=755 owner=anmol gorup=anmol stage=directory"
+ansible nginx -m file -a "dest=/tmp/clouddrove mode=755 owner=anmol gorup=anmol stage=directory"
 ```
 > Delete Directories
 ```yamlex
-$ ansible nginx -m file -a "dest=/tmp/clouddrove state=absent"
+ansible nginx -m file -a "dest=/tmp/clouddrove state=absent"
 ```
 
 ## Manage Packages

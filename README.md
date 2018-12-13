@@ -110,9 +110,24 @@ $ ansible nginx -m file -a "dest=/tmp/clouddrove state=absent"
 
 ## Manage Packages
 
-
-
+> Ensure package is installed, but doesn't get updated
 ```
+ansible mysql -m apt -a "name=python state=present"
+```
+
+> Ensure package is installed to a specific version
+```
+ansible mysql -m apt -a "name=python-2.6 state=present"
+```
+
+> Ensure package is installed with latest version
+```
+ansible mysql -m apt -a "name=python state=latest"
+```
+
+> Ensure package is installed is not installed
+```
+ansible mysql -m apt -a "name=python state=absent"
 ```
 
 ## Manage Services

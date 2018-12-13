@@ -121,7 +121,7 @@ ansible nginx -m service -a "name=nginx state=stopped"
 
 #### Sample Playbooks
 
-```yamlex
+```yaml
 - name: dpkg --configure -a
   shell: dpkg --configure -a
   tags:
@@ -152,7 +152,7 @@ ansible nginx -m service -a "name=nginx state=stopped"
 
 #### Writing Playbooks
 > create a Playbook
-```yamlex
+```yaml
 - hosts: live-node-01
   become: true
   roles:

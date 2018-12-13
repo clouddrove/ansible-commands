@@ -8,7 +8,7 @@
     </a>
 </p>
 
-List of general purpose commands for Kubernetes management:
+List of general purpose commands for Ansible management:
 
 - [Installation](#installation)
 - [Inventory/Hosts](#inventory)

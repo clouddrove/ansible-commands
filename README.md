@@ -86,37 +86,81 @@ ansible nginx -m file -a "dest=/tmp/clouddrove state=absent"
 ## Manage Packages
 
 > Ensure package is installed, but doesn't get updated
-```
+```yamlex
 ansible mysql -m apt -a "name=python state=present"
 ```
 > Ensure package is installed to a specific version
-```
+```yamlex
 ansible mysql -m apt -a "name=python-2.6 state=present"
 ```
 > Ensure package is installed with latest version
-```
+```yamlex
 ansible mysql -m apt -a "name=python state=latest"
 ```
 > Ensure package is installed is not installed
-```
+```yamlex
 ansible mysql -m apt -a "name=python state=absent"
 ```
 
 ## Manage Services
 
 > Ensure a service is started on all nginx servers
-```
+```yamlex
 ansible nginx -m service -a "name=nginx state=started"
 ```
 > Restart service on all nginx servers
-```
+```yamlex
 ansible nginx -m service -a "name=nginx state=restarted"
 ```
 > Ensure a service is stopped
-```
+```yamlex
 ansible nginx -m service -a "name=nginx state=stopped"
 ```
 
+## Playbooks
+
+#### Sample Playbooks
+
+```yamlex
+- name: dpkg --configure -a
+  shell: dpkg --configure -a
+  tags:
+    - dpkg
+
+- name: install system pakcages and utils
+  apt:
+    name: "{{ item }}"
+    state: latest
+    update_cache: yes
+    cache_valid_time: 5400
+    allow_unauthenticated: yes
+  with_items:
+   - ntp
+   - git
+   - git-core
+   - htop
+   - vim
+   - curl
+   - unzip
+   - jq
+   - python-setuptools
+   - python-dev
+   - build-essential
+  tags:
+    - packages
+```
+
+#### Writing Playbooks
+> create a Playbook
+```yamlex
+- hosts: live-node-01
+  become: true
+  roles:
+    - { role: common,    tags: [ 'common'    ] }
+    - { role: docker,    tags: [ 'docker'    ] }
+    - { role: jenkins,   tags: [ 'agent'     ] }
+    - { role: selenoid,  tags: [ 'selenoid'  ] }
+```
 More about Ansible: 
 
 - https://docs.ansible.com/ansible/latest/index.html

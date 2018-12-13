@@ -40,7 +40,7 @@ nginx
 
 ## Check Connection
 
-```yamlex
+```yaml
 $ ansible -m ping <host>
 ```
 
@@ -52,68 +52,68 @@ $ ansible -m ping <host>
 ssh-agnet bash $ ssh-add ~/.ssh/id_rsa
 ```
 > Reboot remove server using anisble
-```yamlex
+```yaml
 ansible mysql -a "/sbin/reboot" -f 20
 ```
 > Run ansible using specific user
-```yamlex
+```yaml
 ansible nginx -a "/usr/bin/foo" -u anmolnagpal
 ```   
 > Run ansible using specific user
-```yamlex
+```yaml
 ansible nginx -a "/usr/bin/foo" -u anmolnagpal
 ```   
 #### File Transfer
 
 > Transfer file to many servers
-```yamlex
+```yaml
 ansible nginx -m copy -a "src=/etc/anmol.txt dest=/tmp/anmol.txt"
 ```
 > Transfer file with specific ownership & permission
-```yamlex
+```yaml
 ansible nginx -m file -a "src=/etc/anmol.txt dest=/tmp/anmol.txt mode=600"
 ansible nginx -m file -a "src=/etc/anmol.txt dest=/tmp/anmol.txt mode=600 owner=anmol gorup=anmol"
 ```
 > Create Directories 
-```yamlex
+```yaml
 ansible nginx -m file -a "dest=/tmp/clouddrove mode=755 owner=anmol gorup=anmol stage=directory"
 ```
 > Delete Directories
-```yamlex
+```yaml
 ansible nginx -m file -a "dest=/tmp/clouddrove state=absent"
 ```
 
 ## Manage Packages
 
 > Ensure package is installed, but doesn't get updated
-```yamlex
+```yaml
 ansible mysql -m apt -a "name=python state=present"
 ```
 > Ensure package is installed to a specific version
-```yamlex
+```yaml
 ansible mysql -m apt -a "name=python-2.6 state=present"
 ```
 > Ensure package is installed with latest version
-```yamlex
+```yaml
 ansible mysql -m apt -a "name=python state=latest"
 ```
 > Ensure package is installed is not installed
-```yamlex
+```yaml
 ansible mysql -m apt -a "name=python state=absent"
 ```
 
 ## Manage Services
 
 > Ensure a service is started on all nginx servers
-```yamlex
+```yaml
 ansible nginx -m service -a "name=nginx state=started"
 ```
 > Restart service on all nginx servers
-```yamlex
+```yaml
 ansible nginx -m service -a "name=nginx state=restarted"
 ```
 > Ensure a service is stopped
-```yamlex
+```yaml
 ansible nginx -m service -a "name=nginx state=stopped"
 ```
 

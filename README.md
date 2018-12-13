@@ -1,6 +1,6 @@
-<p align="center"><img src="https://i.imgur.com/nvYD94K.png" /></p>
+<p align="center"><img src="https://i.imgur.com/xYb2PRb.png" /></p>
 
-> Kubernetes commands
+> Ansible commands
 
 <p align="center">
     <a href="LICENSE.md">

@@ -115,6 +115,25 @@ ansible nginx -m service -a "name=nginx state=stopped"
 
 ## Playbooks
 
+#### Playbook: Update system (Debian based)
+
+```---
+- hosts: local
+  tasks: 
+    - name: Update system
+      apt:
+        update_cache: yes 
+        upgrade: yes 
+    - name: Remove dependencies
+      apt:
+        autoremove: yes 
+    - name: Remove useless packages from the cache
+      apt:
+        autoclean: yes 
+    
+...
+```
+
 #### Sample Playbooks
 
 ```yaml

@@ -29,7 +29,7 @@ Example of Inventory file
 [nginx]
 10.0.0.17 = Env=live EcType=nginx EcName=live-nginx-0-b Az=a Nr=0
 
-[live:children] 
+[live:children]
 mysql
 nginx
 ```
@@ -54,11 +54,11 @@ ansible mysql -a "/sbin/reboot" -f 20
 > Run ansible using specific user
 ```yaml
 ansible nginx -a "/usr/bin/foo" -u anmolnagpal
-```   
+```
 > Run ansible using specific user
 ```yaml
 ansible nginx -a "/usr/bin/foo" -u anmolnagpal
-```   
+```
 #### File Transfer
 
 > Transfer file to many servers
@@ -70,7 +70,7 @@ ansible nginx -m copy -a "src=/etc/anmol.txt dest=/tmp/anmol.txt"
 ansible nginx -m file -a "src=/etc/anmol.txt dest=/tmp/anmol.txt mode=600"
 ansible nginx -m file -a "src=/etc/anmol.txt dest=/tmp/anmol.txt mode=600 owner=anmol gorup=anmol"
 ```
-> Create Directories 
+> Create Directories
 ```yaml
 ansible nginx -m file -a "dest=/tmp/clouddrove mode=755 owner=anmol gorup=anmol stage=directory"
 ```
@@ -119,17 +119,17 @@ ansible nginx -m service -a "name=nginx state=stopped"
 
 ```yaml
 - hosts: local
-  tasks: 
+  tasks:
     - name: Update system
       apt:
-        update_cache: yes 
-        upgrade: yes 
+        update_cache: yes
+        upgrade: yes
     - name: Remove dependencies
       apt:
-        autoremove: yes 
+        autoremove: yes
     - name: Remove useless packages from the cache
       apt:
-        autoclean: yes 
+        autoclean: yes
 ```
 
 #### Sample Playbooks
@@ -164,7 +164,7 @@ ansible nginx -m service -a "name=nginx state=stopped"
 ```
 
 #### Writing Playbooks
-> create a Playbook
+> Create a playbook
 ```yaml
 - hosts: live-node-01
   become: true
@@ -174,9 +174,21 @@ ansible nginx -m service -a "name=nginx state=stopped"
     - { role: jenkins,   tags: [ 'agent'     ] }
     - { role: selenoid,  tags: [ 'selenoid'  ] }
 ```
-More about Ansible: 
+
+#### Ansible Vault
+> Using the argument “ — ask-vault-pass”
+```
+ansible-playbook users.yml --ask-vault-pass
+```
+> Using the argument “ — vault-password-file”
+```
+ansible-playbook users.yml --vault-password-file /anmol/.ansible/vault-passwd
+```
+
+More about Ansible:
 
 - https://docs.ansible.com/ansible/latest/index.html
+- https://medium.com/clouddrove/about-ansible-vault-cbeeae7add87
 - https://medium.com/tech-tajawal/ansible-an-effective-it-automation-tool-be603417ea1a
 
 ## 👬 Contribution

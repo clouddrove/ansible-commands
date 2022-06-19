@@ -132,6 +132,24 @@ ansible nginx -m service -a "name=nginx state=stopped"
         autoclean: yes
 ```
 
+#### Playbook: List Kubernetes Cluster Nodes
+
+```yml
+- name: Kubernetes Cluster Health Check
+  hosts: k8s
+  become: true
+  gather_facts: false
+  tasks:
+    - name: Checking the Kubernetes Nodes
+      shell:
+        kubectl get nodes 
+      register: results
+
+    - name: Print the Kubernetes Nodes
+      debug:
+        msg: "{{ results.stdout.split('\n') }}"
+```
+
 #### Sample Playbooks
 
 ```yaml
